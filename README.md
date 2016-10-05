@@ -68,4 +68,4 @@
 * It may help to review relative vs absolute positioning, and how `top` and `left` can be used to specify the location of an html element
 * You may find [this guide](https://css-tricks.com/examples/ShapesOfCSS/) helpful for drawing shapes with CSS (For triangle, use Top-Left, Top-Right, Bottom-Left, or Bottom-Right)
 * Triangle area: `0.5 * base * height`
-* Triangle perimeter (right isoceles): 2 * height * square root of (2 * height * height)
+* Triangle perimeter (right isoceles): 2 * height + (square root of 2) * height
