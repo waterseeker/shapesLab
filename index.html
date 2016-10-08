@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles.css">
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	</head>
-	<body background = "http://media.gettyimages.com/videos/abstract-geometric-triangles-background-glow-video-id467166668?s=640x640">
-	    <form>
-            Width: <input type="number" name="RecWidth" value="0"><br>
-            Height: <input type="number" name="RecHeight" value="0"><br>
-                <input type="submit" value="Insert Rectangle">
-        </form>
-        
-	</body>
-	<script src = "scripts.js"></script>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src = "scripts.js"></script>
+    <title>Shapes</title>
+</head>
+<body background = "http://media.gettyimages.com/videos/abstract-geometric-triangles-background-glow-video-id467166668?s=640x640">
+    <h3>Rectangle</h3>
+    <form>
+        Width:<br>
+        <input type="text" name="width">
+        Height:
+        <input type="text" name="height">
+        <input type="submit" value="Insert"><br>
+    </form>
+    <h3>Square</h3>
+     <form>
+        Side:<br>
+        <input type="text" name="side">
+        <input type="submit" value="Insert"><br>
+    </form>
+    <h3>Triangle</h3>
+     <form>
+        Height:<br>
+        <input type="text" name="height">
+        <input type="submit" value="Insert"><br>
+    </form>
+    <h3>Circle</h3>
+     <form>
+        Radius:<br>
+        <input type="text" name="radius">
+        <input id= "circleButton"  type="submit" value="Insert" onclick="drawCircle()";><br>
+    </form>
+    <div id = "drawingSpace"></div>
+</body>
+
 </html>
