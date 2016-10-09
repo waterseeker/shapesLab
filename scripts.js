@@ -1,68 +1,69 @@
-$( document ).ready(function() {
-    
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById('circle-btn').addEventListener('click', createCircle);
+    document.getElementById('rectangle-btn').addEventListener('click', createRectangle);
+    document.getElementById('square-btn').addEventListener('click', createSquare);
+    //document.getElementById('triangle-btn').addEventListener('click', createTriangle);
+    //gets information from input field in HTML
+    var circleRadius = document.getElementById('CircleRadius');
+    var rectangleWidth = document.getElementById('recWidth');
+    var rectangleHeight = document.getElementById('recHeight');
+    var squareSide = document.getElementById('squareSide');
+    var triangleHeight = document.getElementById('triangleHeight');
 
-// //draw a circle
-// function drawCircle() {
-//     var c=document.getElementById("drawingSpace");
-//     var ctx=c.getContext("2d");
-//     ctx.beginPath();
-//     ctx.arc(100,75,50,0,2*Math.PI);
-//     ctx.stroke();
-}//end of drawCircle
+    //create generic Shape class
+    var Shape = function(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    //draws or creates the shape
+    Shape.prototype.drawShape = function() {
+        this.div = document.createElement('div');
+        this.div.classList.add(this.cssClass);
+        this.div.style.height = `${this.height}px`;
+        this.div.style.width = `${this.width}px`;
 
- 
-package shapes {
-    public class Shape {
-        // puts the shape on the canvas
-        public function Draw {   
-        }
-        //double click event listener to trigger removal 
-        this.addEventListener('dblclick'),
-        //remove shape from canvas on doubleclick
-        public function Remove {
-            this.remove()
-        }
-        
-        
-        }
+        document.getElementById('drawingSpace').appendChild(this.div);
+    }
+    //create specific Circle class
+    var Circle = function(radius) {
+        Shape.call(this, radius * 2, radius * 2);
+        this.cssClass = 'circle';
+        this.drawShape();
+    }
+    //no idea what this does, but we have to have it
+    Circle.prototype = Object.create(Shape.prototype);
+    Circle.prototype.constructor = Circle;
+    //function to create the Circle
+    function createCircle() {
+        new Circle(circleRadius.value);
     }
 
-
-package shapes {
-    public class Circle extends Shape {
-        
-        // all circles are purple
-        this.color=purple;
-        this.radius= inputfield.value;
-}
-
-package shapes {
-    public class Triangle extends Shape {
-        //all triangles are yellow
-        this.color=yellow;
-        this.height=inputfield.value;
-        
-        
+    //create specific Rectangle class
+    var Rectangle = function(width, height) {
+        Shape.call(this, width, height);
+        this.cssClass = 'rectangle';
+        this.drawShape();
     }
-}
-
-package shapes {
-    public class Rectangle extends Shape {
-        
-        //all rectangles are green
-        this.color=green;
-        this.width=inputfield.value;
-        this.height=inputfield.value;
+    //have to have these
+    Rectangle.prototype = Object.create(Shape.prototype);
+    Rectangle.prototype.constructor = Rectangle;
+    //function to create the Rectangle
+    function createRectangle() {
+        new Rectangle(rectangleHeight.value, rectangleWidth.value);
     }
-}
 
-package shapes {
-    public class Square extends Shape {
-        //all squares are red
-        this.color=red;
-        this.sideLength=inputfield.value;
-        
+     //create specific Circle class
+    var Square = function(side) {
+        Shape.call(this, side, side);
+        this.cssClass = 'square';
+        this.drawShape();
     }
-}
+    //no idea what this does, but we have to have it
+    Square.prototype = Object.create(Shape.prototype);
+    Square.prototype.constructor = Square;
+    //function to create the Circle
+    function createSquare() {
+        new Square(squareSide.value);
+    }
 
 });//end of document.ready

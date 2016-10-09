@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src = "scripts.js"></script>
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>-->
     <title>Shapes</title>
 </head>
+
 <body background = "http://media.gettyimages.com/videos/abstract-geometric-triangles-background-glow-video-id467166668?s=640x640">
-    <h3>Rectangle</h3>
-    <form>
+    <p>Rectangle</p>
+    <div>
         Width:<br>
-        <input type="text" name="width">
+        <input type="number" name="width" id="recWidth"> 
         Height:
-        <input type="text" name="height">
-        <input type="submit" value="Insert"><br>
-    </form>
-    <h3>Square</h3>
-     <form>
+        <input type="number" name="height" id="recHeight">
+        <button id='rectangle-btn'>Insert</button><br>
+    </div>
+    <p>Square</p>
+    <div>
         Side:<br>
-        <input type="text" name="side">
-        <input type="submit" value="Insert"><br>
-    </form>
-    <h3>Triangle</h3>
-     <form>
+        <input type="number" name="side" id="squareSide">
+        <button id='square-btn'>Insert</button><br>
+    </div>
+    <p>Triangle</p>
+    <div>
         Height:<br>
-        <input type="text" name="height">
-        <input type="submit" value="Insert"><br>
-    </form>
-    <h3>Circle</h3>
-     <form>
+        <input type="number" name="height" id="triangleHeight">
+        <button id='triangle-btn'>Insert</button><br>
+    </div>
+    <p>Circle</p>
+    <div>
         Radius:<br>
-        <input type="text" name="radius">
-        <input id= "circleButton"  type="submit" value="Insert" onclick="drawCircle()";><br>
-    </form>
-    <div id = "drawingSpace"></div>
+        <input type="number" name="radius" id="CircleRadius">
+        <button id='circle-btn'>Insert</button><br>
+
+    </div>
+
+
+    <div id="drawingSpace"></div>
+    <script src="scripts.js"></script>
+
 </body>
 
 </html>

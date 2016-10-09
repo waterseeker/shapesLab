@@ -1,10 +1,11 @@
-#drawingSpace {
-    background-color: lightgrey;
-    height: 600px;
-    width: 600px;
-}
 
 input[type=text] {
+    border: 2px solid limegreen;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+input[type=number] {
     border: 2px solid limegreen;
     border-radius: 4px;
     margin: 8px 0;
@@ -19,7 +20,7 @@ h3 {
     color: white;
 }
 
-input[name=width] {    
+p {    
     width: 100px;
     color: white;
     text-shadow:
@@ -27,10 +28,9 @@ input[name=width] {
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000;
-
-} 
-
-input[name=height] {    
+       
+}
+div {    
     width: 100px;
     color: white;
     text-shadow:
@@ -38,66 +38,49 @@ input[name=height] {
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000;
-
+       
 }
 
-input[name=side] {    
-    width: 100px;
-    color: white;
+button {    
+    color: black;
     text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
 
 }
 
-input[name=radius] {    
-    width: 100px;
-    color: white;
-    text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-
-}
-
-form {    
-    color: white;
-    text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-
-}
-
-#square {
+.square {
 	width: 100px;
 	height: 100px;
 	background: red;
 }
 
 
-#rectangle {
-	width: 200px;
-	height: 100px;
-	background: red;
+.rectangle {
+	background-color: green;
+    
 }
 
-#circle {
-	width: 100px;
-	height: 100px;
-	background: red;
+.circle {
+	background-color: purple;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
-	border-radius: 50px;
+	border-radius: 50%;
 }
 
-#triangle-bottomleft {
+.triangle-bottomleft {
 	width: 0;
 	height: 0;
 	border-bottom: 100px solid red;
 	border-right: 100px solid transparent;
 }
+
+
+ #drawingSpace {
+    background-color: lightgrey;
+    height: 600px;
+    width: 600px;
+}
+
