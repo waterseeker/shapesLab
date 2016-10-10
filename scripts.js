@@ -83,11 +83,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         new Square(squareSide.value);
     }
 
-    //create specific Triangle class
     var Triangle = function(triangleHeight) {
-        Shape.call(this, triangleHeight, triangleHeight);
+        Shape.call(this, 0, 0);
         this.cssClass = 'triangle';
         this.drawShape();
+        // this.cssClass = "triangle"
+        var isoPx = triangleHeight + "px";
+        this.div.style.borderTopWidth = isoPx;
+        this.div.style.borderRightWidth = 0;
+        this.div.style.borderBottomWidth = 0;
+        this.div.style.borderLeftWidth = isoPx;
     }
     //have to have these
     Triangle.prototype = Object.create(Shape.prototype);

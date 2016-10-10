@@ -71,8 +71,13 @@ button {
 }
 
 .triangle {
-	border-bottom: 100px solid yellow;
-	border-right: 100px solid transparent;
+    height: 0;
+    width: 0;
+    /*background-color: yellow;*/
+    /*border-top: solid yellow;
+    border-right: 100px solid transparent;*/
+    border-style: solid;
+    border-color: transparent transparent transparent yellow;
 }
 
 
