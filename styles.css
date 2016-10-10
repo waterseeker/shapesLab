@@ -54,7 +54,7 @@ button {
 .square {
 	width: 100px;
 	height: 100px;
-	background: red;
+	background-color: red;
 }
 
 
@@ -70,10 +70,8 @@ button {
 	border-radius: 50%;
 }
 
-.triangle-bottomleft {
-	width: 0;
-	height: 0;
-	border-bottom: 100px solid red;
+.triangle {
+	border-bottom: 100px solid yellow;
 	border-right: 100px solid transparent;
 }
 

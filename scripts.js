@@ -2,13 +2,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById('circle-btn').addEventListener('click', createCircle);
     document.getElementById('rectangle-btn').addEventListener('click', createRectangle);
     document.getElementById('square-btn').addEventListener('click', createSquare);
-    //document.getElementById('triangle-btn').addEventListener('click', createTriangle);
+    document.getElementById('triangle-btn').addEventListener('click', createTriangle);
+    var canvas = document.getElementById('drawingSpace');
     //gets information from input field in HTML
     var circleRadius = document.getElementById('CircleRadius');
     var rectangleWidth = document.getElementById('recWidth');
     var rectangleHeight = document.getElementById('recHeight');
     var squareSide = document.getElementById('squareSide');
     var triangleHeight = document.getElementById('triangleHeight');
+
+    // // get random position can't get this to work'
+    // function getRandomPosition(element) {
+	// var x = canvas.offsetHeight-element.clientHeight;
+	// var y = canvas.offsetWidth-element.clientWidth;
+	// var randomX = Math.floor(Math.random()*x);
+	// var randomY = Math.floor(Math.random()*y);
+	// return [randomX,randomY];
+    // }
 
     //create generic Shape class
     var Shape = function(width, height) {
@@ -21,6 +31,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         this.div.classList.add(this.cssClass);
         this.div.style.height = `${this.height}px`;
         this.div.style.width = `${this.width}px`;
+        this.div.addEventListener('dblclick', this.remove.bind(this));
+	    // this.div.setAttribute("style", "position:absolute;");
+	    // this.div.setAttribute("src", "some-image.jpg");
+	    // var xy = getRandomPosition(this.div);
+	    // this.div.style.top = xy[0] + 'px';
+	    // this.div.style.left = xy[1] + 'px';
+        
 
         document.getElementById('drawingSpace').appendChild(this.div);
     }
@@ -52,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         new Rectangle(rectangleHeight.value, rectangleWidth.value);
     }
 
-     //create specific Circle class
+     //create specific Square class
     var Square = function(side) {
         Shape.call(this, side, side);
         this.cssClass = 'square';
@@ -61,9 +78,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //no idea what this does, but we have to have it
     Square.prototype = Object.create(Shape.prototype);
     Square.prototype.constructor = Square;
-    //function to create the Circle
+    //function to create the Square
     function createSquare() {
         new Square(squareSide.value);
+    }
+
+    //create specific Triangle class
+    var Triangle = function(triangleHeight) {
+        Shape.call(this, triangleHeight, triangleHeight);
+        this.cssClass = 'triangle';
+        this.drawShape();
+    }
+    //have to have these
+    Triangle.prototype = Object.create(Shape.prototype);
+    Triangle.prototype.constructor = Triangle;
+    //function to create the Triangle
+    function createTriangle() {
+        new Triangle(triangleHeight.value);
+    }
+
+    //to remove div
+    Shape.prototype.remove = function() {
+        this.div.remove();
     }
 
 });//end of document.ready
